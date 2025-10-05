@@ -1,0 +1,130 @@
+/* Container grid for all product cards */
+.pd-products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* products heading */
+.products-section {
+  padding: 0px 0px;
+  text-align: center;
+}
+
+.products-section-title {
+  display:block;
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+  padding: 40px 40px;
+ margin: 0 0 0 0;
+  background: linear-gradient(135deg, #f59e0b, #f97316, #facc15); /* aesthetic gradient */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+
+.products-section-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 12px;
+  color: #555;
+}
+/* Product card */
+.pd-product-card {
+  width: 300px;
+  border-radius: 20px; /* all four corners curved */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pd-product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.pd-product-card h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111;
+  text-align: center;
+  margin: 20px 0 10px 0;
+}
+
+/* Image container with perspective */
+.pd-product-card-image {
+  background: linear-gradient(90deg, #fef3c7, #fdba74);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px 15px 15px 15px; /* match top corners */
+  perspective: 1000px;
+}
+
+/* Continuous 3D rotation */
+.pd-product-card-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  transform-style: preserve-3d;
+  animation: rotate3d 12s linear infinite; /* continuous rotation */
+}
+
+/* 3D rotation keyframes */
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateX(10deg) rotateY(90deg);
+  }
+  50% {
+    transform: rotateX(-10deg) rotateY(180deg);
+  }
+  75% {
+    transform: rotateX(10deg) rotateY(270deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(360deg);
+  }
+}
+
+.pd-product-card-content {
+  padding: 40px 20px 20px 20px;
+  text-align: center;
+}
+
+.pd-product-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pd-product-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.pd-product-features .pd-icon {
+  font-size: 18px;
+  color: #555;
+}
+
+.pd-product-features .pd-heartbeat {
+  color: #e53935;
+}
+
+.pd-product-features .pd-battery {
+  color: #2e7d32;
+}
